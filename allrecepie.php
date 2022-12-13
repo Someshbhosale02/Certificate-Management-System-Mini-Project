@@ -36,39 +36,39 @@ if(!isset($_SESSION['username']) || empty($_SESSION['username'])){
             <div class="row">
                 <div class="col-md-12">
                     <div class="page-header clearfix">
-                        <h2 class="pull-left">Recepie  Details</h2>
+                        <h2 class="pull-left">Certificate  Details</h2>
                        
                     </div>
-                     <a href="add_recepie.php" class="btn btn-success pull-right">Add New Recepie</a>
+                     <a href="add_recepie.php" class="btn btn-success pull-right">Add New Certificate</a>
                     <?php
 // Include config file
                     require_once 'config.php';
 
 // Attempt select query execution
-                    $sql = "SELECT * FROM recepie";
+                    $sql = "SELECT * FROM certificate";
                     if($result = mysqli_query($link, $sql)){
                         if(mysqli_num_rows($result) > 0){
                             echo "<table class='table table-bordered table-striped'>";
                             echo "<thead>";
                             echo "<tr>";
                             echo "<th>Sr No</th>";
-                            echo "<th> Recepie Name</th>";
-                            echo "<th> Recepie Description</th>";
-                            echo "<th> Recepie Type</th>";
+                            echo "<th> Certificate Name</th>";
+                            echo "<th> Certificate Description</th>";
+                            echo "<th> Certificate Type</th>";
                             echo "<th>Action</th>";
                             echo "</tr>";
                             echo "</thead>";
                             echo "<tbody>";
                             while($row = mysqli_fetch_array($result)){
                                 echo "<tr>";
-                                echo "<td>" . $row['recepie_id'] . "</td>";
-                                echo "<td>" . $row['recepie_name'] . "</td>";
-                                echo "<td>" . $row['recepie_desc'] . "</td>";
-                                echo "<td>" . $row['recepie_type'] . "</td>";
+                                echo "<td>" . $row['certificate_id'] . "</td>";
+                                echo "<td>" . $row['certificate_name'] . "</td>";
+                                echo "<td>" . $row['certificate_desc'] . "</td>";
+                                echo "<td>" . $row['certificate_type'] . "</td>";
                                 echo "<td>";
-                                echo "<a href='recepie.php?recepie_id=". $row['recepie_id'] ."' title='View Record' data-toggle='tooltip'>View | </a>";
-                                echo "<a href='Recepie_edit.php?recepie_id=". $row['recepie_id'] ."' title='Update Record' data-toggle='tooltip'> Edit |</a>";
-                                echo "<a href='Recepie_delete.php?recepie_id=". $row['recepie_id'] ."' title='Delete Record' data-toggle='tooltip'> Delete </a>";
+                                echo "<a href='recepie.php?certificate_id=". $row['certificate_id'] ."' title='View Record' data-toggle='tooltip'>View | </a>";
+                                echo "<a href='Recepie_edit.php?certificate_id=". $row['certificate_id'] ."' title='Update Record' data-toggle='tooltip'> Edit |</a>";
+                                echo "<a href='Recepie_delete.php?certificate_id=". $row['certificate_id'] ."' title='Delete Record' data-toggle='tooltip'> Delete </a>";
                                 echo "</td>";
                                 echo "</tr>";
                             }

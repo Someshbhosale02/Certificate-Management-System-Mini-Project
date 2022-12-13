@@ -10,14 +10,14 @@
     $wordsCount = count($wordsAry);
     $queryCondition = " WHERE ";
     for($i=0;$i<$wordsCount;$i++) {
-      $queryCondition .= "recepie_name LIKE '%" . $wordsAry[$i] . "%' OR recepie_desc LIKE '%" . $wordsAry[$i] . "%'";
+      $queryCondition .= "certificate_name LIKE '%" . $wordsAry[$i] . "%' OR certificate_desc LIKE '%" . $wordsAry[$i] . "%'";
       if($i!=$wordsCount-1) {
         $queryCondition .= " OR ";
       }
     }
   }
-  $orderby = " ORDER BY recepie_id desc"; 
-  $sql = "SELECT * FROM recepie " . $queryCondition;
+  $orderby = " ORDER BY certificate_id desc"; 
+  $sql = "SELECT * FROM certificate " . $queryCondition;
   $result = mysqli_query($conn,$sql); 
 ?>
 <?php 
@@ -43,7 +43,7 @@
   <meta name="author" content="">
   <link rel="icon" href="http://localhost/CertificateManagementSystem/img/favicon.ico">
 
-  <title>Search Recepie | FOOD DECIDER</title>
+  <title>Search certificate | FOOD DECIDER</title>
 
   <!-- Bootstrap core CSS -->
   <link href="http://localhost/CertificateManagementSystem/css/bootstrap.min.css" rel="stylesheet">
@@ -79,13 +79,13 @@
 
       <?php 
         while($row = mysqli_fetch_assoc($result)) { 
-        $new_title = $row["recepie_name"];
+        $new_title = $row["certificate_name"];
         if(!empty($_POST["keyword"])) {
-          $new_title = highlightKeywords($row["recepie_name"],$_POST["keyword"]);
+          $new_title = highlightKeywords($row["certificate_name"],$_POST["keyword"]);
         }
-        $new_description = $row["recepie_desc"];
+        $new_description = $row["certificate_desc"];
         if(!empty($_POST["keyword"])) {
-          $new_description = highlightKeywords($row["recepie_desc"],$_POST["keyword"]);
+          $new_description = highlightKeywords($row["certificate_desc"],$_POST["keyword"]);
         }
       ?>
 

@@ -42,7 +42,7 @@ CREATE TABLE `staff` (
 --
 
 INSERT INTO `staff` (`admin_id`, `admin_name`, `admin_email`, `admin_password`, `created_at`, `updated_at`) VALUES
-(1, 'piyushmoon', 'gvsdadh@gmail.com', '$2y$10$SODT.gPuKO12DLh7QEsBseA.0Gosy3ehYbCa1iw1Ku2CYjddXT/ei', '2017-12-09 10:29:49', '0000-00-00 00:00:00');
+(1, 'somesh', 'someshbhosale10@gmail.com', '$2y$10$SODT.gPuKO12DLh7QEsBseA.0Gosy3ehYbCa1iw1Ku2CYjddXT/ei', '2017-12-09 10:29:49', '0000-00-00 00:00:00');
 
 -- --------------------------------------------------------
 
