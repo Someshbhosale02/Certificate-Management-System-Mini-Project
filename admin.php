@@ -15,15 +15,15 @@ if(!isset($_SESSION['username']) || empty($_SESSION['username'])){
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
   <meta name="author" content="">
-  <link rel="icon" href="http://localhost/food/img/favicon.ico">
+  <link rel="icon" href="http://localhost/certificatemanagementsystem/img/favicon.ico">
 
   <title> Admin Details | FOOD DECIDER</title>
 
   <!-- Bootstrap core CSS -->
-  <link href="http://localhost/food/css/bootstrap.min.css" rel="stylesheet">
+  <link href="http://localhost/certificatemanagementsystem/css/bootstrap.min.css" rel="stylesheet">
 
   <!-- Custom styles for this template -->
-  <link href="http://localhost/food/css/bootstrap.min.cssnarrow-jumbotron.css" rel="stylesheet">
+  <link href="http://localhost/certificatemanagementsystem/css/bootstrap.min.cssnarrow-jumbotron.css" rel="stylesheet">
 </head>
 
 <body>

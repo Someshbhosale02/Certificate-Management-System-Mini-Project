@@ -36,7 +36,7 @@ if(!isset($_SESSION['username']) || empty($_SESSION['username'])){
               <h4 class="card-title">Upload Students Certificate</h4>
               <h6 class="card-subtitle mb-2 text-muted">The institution can upload the certificates of students. </h6>
               <p class="card-text"></p>
-              <a href="allrecepie.php" class="card-link">Upload Students Certificate</a>
+              <a href="allcertificate.php" class="card-link">Upload Students Certificate</a>
             </div>
           </div>
         </div>
