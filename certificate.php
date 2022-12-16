@@ -12,19 +12,19 @@ if(!isset($_SESSION['username']) || empty($_SESSION['username'])){
  
  
 // Check existence of id parameter before processing further
-if(isset($_GET["recepie_id"]) && !empty(trim($_GET["recepie_id"]))){
+if(isset($_GET["certificate_id"]) && !empty(trim($_GET["certificate_id"]))){
 // Include config file
   require_once 'config.php';
 
 // Prepare a select statement
-  $sql = "SELECT * FROM recepie WHERE recepie_id = ?";
+  $sql = "SELECT * FROM certificate WHERE certificate_id = ?";
 
   if($stmt = mysqli_prepare($link, $sql)){
 // Bind variables to the prepared statement as parameters
     mysqli_stmt_bind_param($stmt, "i", $param_id);
 
 // Set parameters
-    $param_id = trim($_GET["recepie_id"]);
+    $param_id = trim($_GET["certificate_id"]);
 
 // Attempt to execute the prepared statement
     if(mysqli_stmt_execute($stmt)){
@@ -35,9 +35,9 @@ if(isset($_GET["recepie_id"]) && !empty(trim($_GET["recepie_id"]))){
         $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
 
 // Retrieve individual field value
-        $name = $row["recepie_name"];
-        $address = $row["recepie_desc"];
-        $salary = $row["recepie_type"];
+        $name = $row["certificate_name"];
+        $address = $row["certificate_desc"];
+        $salary = $row["certificate_type"];
       } else{
 // URL doesn't contain valid id parameter. Redirect to error page
         header("location: error.php");
@@ -69,7 +69,7 @@ if(isset($_GET["recepie_id"]) && !empty(trim($_GET["recepie_id"]))){
   <meta name="author" content="">
   <link rel="icon" href="http://localhost/certificatemanagementsystem/img/favicon.ico">
 
-  <title> View Recepie | FOOD DECIDERt</title>
+  <title> View Certificate</title>
 
   <!-- Bootstrap core CSS -->
   <link href="http://localhost/certificatemanagementsystem/css/bootstrap.min.css" rel="stylesheet">
@@ -90,15 +90,15 @@ if(isset($_GET["recepie_id"]) && !empty(trim($_GET["recepie_id"]))){
         </div>
         <div class="form-group">
           <label>Certificate Name</label>
-          <p class="form-control-static"><?php echo $row["recepie_name"]; ?></p>
+          <p class="form-control-static"><?php echo $row["certificate_name"]; ?></p>
         </div>
         <div class="form-group">
           <label>Certificate Description</label>
-          <p class="form-control-static"><?php echo $row["recepie_desc"]; ?></p>
+          <p class="form-control-static"><?php echo $row["certificate_desc"]; ?></p>
         </div>
         <div class="form-group">
           <label>Certificate Type (1 - Co-Curricular 2 - Extra-Curricular)</label>
-          <p class="form-control-static"><?php echo $row["recepie_type"]; ?></p>
+          <p class="form-control-static"><?php echo $row["certificate_type"]; ?></p>
         </div>
         <p><a href="allcertificate.php" class="btn btn-primary">Back</a></p>
       </div>
