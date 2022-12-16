@@ -11,19 +11,19 @@ if(!isset($_SESSION['username']) || empty($_SESSION['username'])){
 
 
 // Process delete operation after confirmation
-if(isset($_POST["recepie_id"]) && !empty($_POST["recepie_id"])){
+if(isset($_POST["certificate_id"]) && !empty($_POST["certificate_id"])){
 // Include config file
   require_once 'config.php';
 
 // Prepare a delete statement
-  $sql = "DELETE FROM recepie WHERE recepie_id = ?";
+  $sql = "DELETE FROM certificate WHERE certificate_id = ?";
 
   if($stmt = mysqli_prepare($link, $sql)){
 // Bind variables to the prepared statement as parameters
     mysqli_stmt_bind_param($stmt, "i", $param_id);
 
 // Set parameters
-    $param_id = trim($_POST["recepie_id"]);
+    $param_id = trim($_POST["certificate_id"]);
 
 // Attempt to execute the prepared statement
     if(mysqli_stmt_execute($stmt)){
@@ -42,7 +42,7 @@ if(isset($_POST["recepie_id"]) && !empty($_POST["recepie_id"])){
   mysqli_close($link);
 } else{
 // Check existence of id parameter
-  if(empty(trim($_GET["recepie_id"]))){
+  if(empty(trim($_GET["certificate_id"]))){
 // URL doesn't contain id parameter. Redirect to error page
     header("location: error.php");
     exit();
@@ -57,15 +57,15 @@ if(isset($_POST["recepie_id"]) && !empty($_POST["recepie_id"])){
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <link rel="icon" href="http://localhost/food/img/favicon.ico">
+  <link rel="icon" href="http://localhost/certificatemanagementsystem/img/favicon.ico">
 
-  <title> Delete Recepie | Food Decider</title>
+  <title> Delete Certificate</title>
 
   <!-- Bootstrap core CSS -->
-  <link href="http://localhost/food/css/bootstrap.min.css" rel="stylesheet">
+  <link href="http://localhost/certificatemanagementsystem/css/bootstrap.min.css" rel="stylesheet">
 
   <!-- Custom styles for this template -->
-  <link href="http://localhost/food/css/bootstrap.min.cssnarrow-jumbotron.css" rel="stylesheet">
+  <link href="http://localhost/certificatemanagementsystem/css/bootstrap.min.cssnarrow-jumbotron.css" rel="stylesheet">
 </head>
 
 <body>
@@ -81,12 +81,12 @@ if(isset($_POST["recepie_id"]) && !empty($_POST["recepie_id"])){
 
           <div class="card">
             <div class="card-header">
-              Delete Recepie
+              Delete certificate
             </div>
             <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
               <div class="card-body">
-                <input type="hidden" name="recepie_id" value="<?php echo trim($_GET["recepie_id"]); ?>"/>
-                <h5 class="card-title">Delete Recepie  </h5>
+                <input type="hidden" name="certificate_id" value="<?php echo trim($_GET["certificate_id"]); ?>"/>
+                <h5 class="card-title">Delete Certificate  </h5>
                 <p class="card-text">Are you sure you want to delete this record?</p>
                 <input type="submit" value="Yes" class="btn btn-danger">
                 <a href="allcertificate.php" class="btn btn-default">No</a>
