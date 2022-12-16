@@ -37,12 +37,22 @@ CREATE TABLE `staff` (
   `updated_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+
+
 --
--- Dumping data for table `staff`
+-- Table structure for table `student`
 --
 
-INSERT INTO `staff` (`admin_id`, `admin_name`, `admin_email`, `admin_password`, `created_at`, `updated_at`) VALUES
-(1, 'somesh', 'someshbhosale10@gmail.com', '$2y$10$SODT.gPuKO12DLh7QEsBseA.0Gosy3ehYbCa1iw1Ku2CYjddXT/ei', '2017-12-09 10:29:49', '0000-00-00 00:00:00');
+CREATE TABLE `student` (
+  `student_id` varchar(20) NOT NULL,
+  `student_name` varchar(200) NOT NULL,
+  `student_email` varchar(200) NOT NULL,
+  `student_password` varchar(200) NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `updated_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00'
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+
 
 -- --------------------------------------------------------
 
@@ -51,22 +61,20 @@ INSERT INTO `staff` (`admin_id`, `admin_name`, `admin_email`, `admin_password`, 
 --
 
 CREATE TABLE `certificate` (
-  `certificate_id` int(200) NOT NULL,
+  `certificate_id`  int(200) NOT NULL,
   `certificate_name` varchar(200) NOT NULL,
   `certificate_desc` varchar(300) NOT NULL,
   `certificate_type` int(10) NOT NULL,
   `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  `upadted_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00'
+  `updated_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `student_id` varchar(20) NOT NULL,
+  `file_name` varchar(2000) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `certificate`
 --
 
-INSERT INTO `certificate` (`certificate_id`, `certificate_name`, `certificate_desc`, `certificate_type`, `created_at`, `upadted_at`) VALUES
-(5, 'sad', 'dadadas', 1, '2018-01-13 11:28:19', '0000-00-00 00:00:00'),
-(6, 'rew', 'gjgk', 1, '2018-01-13 11:30:26', '0000-00-00 00:00:00'),
-(7, 'fhbzsd', 'gdrgfg', 1, '2018-01-13 10:16:08', '0000-00-00 00:00:00');
 
 --
 -- Indexes for dumped tables
@@ -77,6 +85,13 @@ INSERT INTO `certificate` (`certificate_id`, `certificate_name`, `certificate_de
 --
 ALTER TABLE `staff`
   ADD PRIMARY KEY (`admin_id`);
+
+
+--
+-- Indexes for table `student`
+--
+ALTER TABLE `student`
+  ADD PRIMARY KEY (`student_id`);
 
 --
 -- Indexes for table `certificate`

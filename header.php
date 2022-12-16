@@ -6,10 +6,10 @@
 // If session variable is not set it will redirect to login page
       if(!isset($_SESSION['username']) || empty($_SESSION['username'])){
         echo "<li class='nav-item'>";
-        echo " <a class='nav-link' href='adminlogin.php'> ADMIN LOGIN</a>";
+        echo " <a class='nav-link' href='adminlogin.php'> ADMIN LOGIN </a>";
         echo "</li>";
         echo "<li class='nav-item'>";
-        echo " <a class='nav-link' href='admin_reg.php'> ADMIN REG</a>";
+        echo " <a class='nav-link' href='studentlogin.php'> STUDENT LOGIN</a>";
         echo "</li>";    
         echo "<li class='nav-item'>";
         echo " <a class='nav-link' href='search.php'> SEARCH </a>";
@@ -23,7 +23,7 @@
         echo " <a class='nav-link' href='dashboard.php'> DASHBOARD </a>";
         echo "</li>";
         echo "<li class='nav-item'>";
-        echo " <a class='nav-link' href='adminlogout.php'> ADMIN LOGOUT</a>";
+        echo " <a class='nav-link' href='logout.php'> LOGOUT </a>";
         echo "</li>";
         echo "<li class='nav-item'>";
         echo " <a class='nav-link' href='search.php'> SEARCH </a>";

@@ -102,7 +102,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
   <meta name="author" content="">
   <link rel="icon" href="http://localhost/CertificateManagementSystem/img/favicon.ico">
 
-  <title> Admin Reg | FOOD DECIDER</title>
+  <title> Admin Reg</title>
 
   <!-- Bootstrap core CSS -->
   <link href="http://localhost/CertificateManagementSystem/css/bootstrap.min.css" rel="stylesheet">

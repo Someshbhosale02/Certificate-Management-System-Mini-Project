@@ -43,7 +43,7 @@
   <meta name="author" content="">
   <link rel="icon" href="http://localhost/CertificateManagementSystem/img/favicon.ico">
 
-  <title>Search certificate | FOOD DECIDER</title>
+  <title>Search Certificate</title>
 
   <!-- Bootstrap core CSS -->
   <link href="http://localhost/CertificateManagementSystem/css/bootstrap.min.css" rel="stylesheet">

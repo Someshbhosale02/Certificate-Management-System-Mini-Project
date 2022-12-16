@@ -17,7 +17,7 @@ if(!isset($_SESSION['username']) || empty($_SESSION['username'])){
   <meta name="author" content="">
   <link rel="icon" href="http://localhost/certificatemanagementsystem/img/favicon.ico">
 
-  <title> Admin Details </title>
+  <title> Admin Details</title>
 
   <!-- Bootstrap core CSS -->
   <link href="http://localhost/certificatemanagementsystem/css/bootstrap.min.css" rel="stylesheet">
