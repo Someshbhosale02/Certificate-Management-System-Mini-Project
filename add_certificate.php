@@ -155,7 +155,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post" enctype="multipart/form-data">
                             <div class="form-group <?php echo (!empty($student_id_err)) ? 'has-error' : ''; ?>">
                                 <label>Student Roll No</label>
-                                <input type="text" name="student_id" class="form-control" disabled=<?php echo (!$_SESSION['is_admin']); ?>
+                                <input type="text" name="student_id" class="form-control" <?php
+                                    if (!$_SESSION['is_admin']) {
+                                        echo ("disabled = \"true\"");
+                                    }
+                                    ?>
                                     value="<?php
                                     if (!$_SESSION['is_admin']) {
                                         $student_id = $_SESSION['user_id'];
